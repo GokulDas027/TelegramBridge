@@ -20,7 +20,7 @@ jobs:
       run: go build -v .
       
     - name: TelegramBridge
-      uses: GokulDas027/TelegramBridge@master
+      uses: athul/statusoli@1.0.0
       if: always()
       with:
         chat: ${{ secrets.chat }}
