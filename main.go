@@ -48,7 +48,7 @@ func main() {
 
 	// icon := icons[strings.ToLower(status)]
 	// text := texts[strings.ToLower(status)] // which icon to use?
-	link := fmt.Sprintf("https://github.com/%s/commit/%s/checks", repo, commit)
+	link := fmt.Sprintf("https://github.com/%s/commit/%s/", repo, commit)
 	// Prepare message to send
 	// msg := fmt.Sprintf(`%s %s  *%s*: %s ([%s](%s))`, icon, text, status, repo, workflow, link)
 	msg := composer(status, event, actor, repo, workflow, link)
