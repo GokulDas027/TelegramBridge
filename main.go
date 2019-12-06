@@ -35,7 +35,7 @@ func main() {
 		// should be defined in the action.yml
 		token  = os.Getenv("INPUT_TOKEN")
 		chat   = os.Getenv("INPUT_CHAT")
-		status = os.Getenv("INPUT_STATUS")
+		status = "success" //os.Getenv("INPUT_STATUS")
 		event  = os.Getenv("INPUT_EVENT")
 		actor  = os.Getenv("INPUT_ACTOR")
 
