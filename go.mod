@@ -1,4 +1,4 @@
-module github.com/athul/tg
+module github.com/gokuldas027/TelegramBridge
 
 go 1.13
 
