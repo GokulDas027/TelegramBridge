@@ -13,7 +13,9 @@
   
 ## How to Use this ?
   This will be available as a plugin once released.
-  Or can be used by creating a .yaml file with necessary configurations(will be updated soon)
+  
+  Or can be used through this [main.yaml](https://github.com/GokulDas027/TelegramBridge/blob/master/main.yaml) file
+    > move it to <repository>/.github/workflows/main.yml
   
   Connect it to a [Telegram bot](https://core.telegram.org/bots).
     * Token is the token of the Bot given by BotFather
