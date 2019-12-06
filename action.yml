@@ -1,12 +1,17 @@
-name: 'Container Action Template'
-description: 'Get started with Container actions'
-author: 'GitHub'
+name: 'TelegramBridge'
+description: 'Send GitHub Updates to Telegram'
+author: 'gokuldas027'
 inputs: 
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+  chat:
+    description: 'Chat to send: chat id or @channel_name'
+    required: true
+  token:
+    description: 'Telegram Bot token'
+    required: true
+  status:
+    description: 'Job status'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.myInput }}
+  

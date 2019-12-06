@@ -1,7 +1,15 @@
-FROM alpine:3.10
+FROM golang:1.13 as builder
 
-COPY LICENSE README.md /
+WORKDIR /app
 
-COPY entrypoint.sh /entrypoint.sh
+COPY . /app
 
-ENTRYPOINT ["/entrypoint.sh"]
+RUN go get github.com/yanzay/tbot/v2
+
+RUN CGO_ENABLED=0 go build -v -o TelegramBridge .
+
+FROM alpine:latest
+
+COPY --from=builder /app/TelegramBridge /TelegramBridge
+
+ENTRYPOINT ["/TelegramBridge"]
