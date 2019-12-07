@@ -12,7 +12,7 @@
   > the limits are not the boundary, but set for reducing the message bombarding, and it can be easily changed at the main.yaml file at your repository. This could help [Action Triggers Docs](https://developer.github.com/webhooks/).
   
 ## How to Use this ?
-  This will be available as a plugin once released.
+  This will be available as a plugin [here](https://github.com/marketplace/actions/telegrambridge).
   
   Or can be used through this [main.yaml](https://github.com/GokulDas027/TelegramBridge/blob/master/main.yaml) file
     > move it to <repository>/.github/workflows/main.yml
