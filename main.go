@@ -21,10 +21,11 @@ func composer(status, event, actor, repo, workflow, link string) string {
 	}
 
 	event = strings.Replace(event, "_", " ", 2)
+	event = strings.ToUpper(event)
 
 	// Message text composing
-	text = icons[strings.ToLower(status)] + "\n"
-	text += "*" + event + "* was made at " + repo + " by " + actor + "\n"
+	text = icons[strings.ToLower(status)] + "\t*" + event + "*\n"
+	text += "was made at " + repo + " \nby " + actor + "\n"
 	text += "Check here " + "[" + workflow + "](" + link + ")"
 
 	return text
