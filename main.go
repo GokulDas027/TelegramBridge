@@ -30,6 +30,20 @@ func composer(status, event, actor, repo, workflow, link string) string {
 	return text
 }
 
+func linkgen(repo, event string) string {
+	context := map[string]string{
+		"issue_comment":               "issues",
+		"issues":                      "issues",
+		"pull_request":                "pulls",
+		"pull_request_review_comment": "pulls",
+		"push":                        "commits",
+	}
+
+	event = context[strings.ToLower(event)]
+
+	return fmt.Sprintf("https://github.com/%s/%s/", repo, event)
+}
+
 func main() {
 
 	var (
@@ -44,14 +58,15 @@ func main() {
 		// github environment context
 		workflow = os.Getenv("GITHUB_WORKFLOW")
 		repo     = os.Getenv("GITHUB_REPOSITORY")
-		commit   = os.Getenv("GITHUB_SHA")
+		// commit   = os.Getenv("GITHUB_SHA")
 	)
 
 	// Create Telegram client using token
 	c := tbot.NewClient(token, http.DefaultClient, "https://api.telegram.org")
 
 	// link to the commit
-	link := fmt.Sprintf("https://github.com/%s/commit/%s/", repo, commit)
+	// link := fmt.Sprintf("https://github.com/%s/commit/%s/", repo, commit)
+	link := linkgen(repo, event)
 
 	// Prepare message to send
 	msg := composer(status, event, actor, repo, workflow, link)
