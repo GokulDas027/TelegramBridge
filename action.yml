@@ -1,16 +1,23 @@
 name: 'TelegramBridge'
-description: 'Send GitHub Updates to Telegram'
+description: 'Send GitHub Updates to Telegram, see readme for step by step instructions'
 author: 'gokuldas027'
 inputs: 
-  chat:
-    description: 'Chat to send: chat id or @channel_name'
-    required: true
-  token:
-    description: 'Telegram Bot token'
-    required: true
-  status:
+  chat: 
+    description: 'Chat to send: chat id or @channel_name/add to secrets'
+    default: ${{ secrets.chat }}
+  token: 
+    description: 'Telegram Bot token/add to secrets'
+    default: ${{ secrets.token }}
+  status: 
     description: 'Job status'
-    required: true
+    default: ${{ job.status }}
+  event: 
+    description: 'Event triggered action'
+    default: ${{ github.event_name }}
+  actor: 
+    description: 'Actor who did the action'
+    default: ${{ github.actor }}
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
