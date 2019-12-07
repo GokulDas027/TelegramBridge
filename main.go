@@ -20,11 +20,12 @@ func composer(status, event, actor, repo, workflow, link string) string {
 		"success":   "✅✅✅",
 	}
 
-	event = strings.Replace(event, "_", " ", 2)
+	// removing underscore from event name to avoide markdown parser error
+	event = strings.Replace(event, "_", " ", 3)
 	event = strings.ToUpper(event)
 
 	// Message text composing
-	text = icons[strings.ToLower(status)] + "\t*" + event + "*\n"
+	text = icons[strings.ToLower(status)] + "  *" + event + "*\n"
 	text += "was made at " + repo + " \nby " + actor + "\n"
 	text += "Check here " + "[" + workflow + "](" + link + ")"
 
@@ -38,6 +39,7 @@ func linkgen(repo, event string) string {
 		"pull_request":                "pulls",
 		"pull_request_review_comment": "pulls",
 		"push":                        "commits",
+		"project_card":                "projects",
 	}
 
 	event = context[strings.ToLower(event)]
