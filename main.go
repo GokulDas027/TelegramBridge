@@ -20,9 +20,11 @@ func composer(status, event, actor, repo, workflow, link string) string {
 		"success":   "✅✅✅",
 	}
 
+	event = strings.Replace(event, "_", " ", 2)
+
 	// Message text composing
 	text = icons[strings.ToLower(status)] + "\n"
-	text += event + " was made at " + repo + " by " + actor + "\n"
+	text += "*" + event + "* was made at " + repo + " by " + actor + "\n"
 	text += "Check here " + "[" + workflow + "](" + link + ")"
 
 	return text
@@ -55,7 +57,7 @@ func main() {
 	msg := composer(status, event, actor, repo, workflow, link)
 
 	// Send to chat using Markdown format
-	_, err := c.SendMessage(chat, msg)
+	_, err := c.SendMessage(chat, msg, tbot.OptParseModeMarkdown)
 	if err != nil {
 		log.Fatalf("unable to send message: %v", err)
 	}
