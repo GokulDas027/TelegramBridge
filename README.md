@@ -20,6 +20,8 @@
   Connect it to a [Telegram bot](https://core.telegram.org/bots).
   * Token is the token of the Bot given by BotFather
   * Id is the Channel id or your user id, depends on how you need the message to be delivered.
+  
+  ### [Check here for step by step instructions](https://github.com/GokulDas027/TelegramBridge/blob/master/instruction.md)
 
 ## How does the message looks like ?
 
