@@ -55,7 +55,7 @@ func main() {
 	msg := composer(status, event, actor, repo, workflow, link)
 
 	// Send to chat using Markdown format
-	_, err := c.SendMessage(chat, msg, tbot.OptParseModeMarkdown)
+	_, err := c.SendMessage(chat, msg)
 	if err != nil {
 		log.Fatalf("unable to send message: %v", err)
 	}
