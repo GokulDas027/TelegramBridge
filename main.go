@@ -41,6 +41,7 @@ func linkgen(repo, event string) string {
 
 	event = context[strings.ToLower(event)]
 
+	// generates link based on the triggered event
 	return fmt.Sprintf("https://github.com/%s/%s/", repo, event)
 }
 
@@ -65,7 +66,6 @@ func main() {
 	c := tbot.NewClient(token, http.DefaultClient, "https://api.telegram.org")
 
 	// link to the commit
-	// link := fmt.Sprintf("https://github.com/%s/commit/%s/", repo, commit)
 	link := linkgen(repo, event)
 
 	// Prepare message to send
