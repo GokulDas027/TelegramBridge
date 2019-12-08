@@ -4,10 +4,12 @@ author: 'gokuldas027'
 inputs: 
   chat: 
     description: 'Chat to send: chat id or @channel_name/add to secrets'
-    default: ${{ secrets.chat }}
+    default: # ${{ secrets.chat }}
+    required: True
   token: 
     description: 'Telegram Bot token/add to secrets'
-    default: ${{ secrets.token }}
+    default: # ${{ secrets.token }}
+    required: True
   status: 
     description: 'Job status'
     default: ${{ job.status }}
