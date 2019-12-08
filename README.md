@@ -2,7 +2,9 @@
   This is a GitHub Action plugin to notify about the changes in GitHub to Telegram Chat via Bot. This could highly help in incresing the development pace.
 
 ## What all can this do ?
-  Notify about :
+  If you're using the provided [main.yaml](https://github.com/GokulDas027/TelegramBridge/blob/master/main.yaml) (recommended)
+  
+  Will Notify about :
   * Pushes
   * Pull Requests (opened, closed, edited, ready_for_review, review_requested, reopened)
   * Pull Request Review Comments (created)
@@ -25,7 +27,7 @@
 
 ## How does the message looks like ?
 
-![Sample Message](https://drive.google.com/uc?export=view&id=1QAVOHLyTNHNuHpgJyxFxhUHDloWj5Ilc)
+![Sample Message](https://drive.google.com/uc?export=view&id=1TsZZi9yS6qC_oQVdoOrRLbL8Zq6WeMqE)
 
 ## What's next ?
 
