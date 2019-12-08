@@ -1,4 +1,4 @@
-name: Telegram Bridge
+name: llocApp
 
 # triggers for notifying
 #  these are some important trigger cases could be change as need
@@ -16,7 +16,7 @@ on:
 
 jobs:
   build:
-    name: Telegram Bridge
+    name: llocApp
     runs-on: ubuntu-latest
 
     steps:
