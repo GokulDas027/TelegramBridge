@@ -21,8 +21,11 @@ func composer(status, event, actor, repo, workflow, link string) string {
 	}
 
 	// removing underscore from event name to avoide markdown parser error
-	event = strings.Replace(event, "_", " ", 3)
+	event = strings.ReplaceAll(event, "_", " ")
 	event = strings.ToUpper(event)
+	repo = strings.ReplaceAll(repo, "_", " ")
+	actor = strings.ReplaceAll(actor, "_", " ")
+	
 
 	// Message text composing
 	text = icons[strings.ToLower(status)] + "  *" + event + "*\n"
