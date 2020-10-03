@@ -71,6 +71,8 @@ func main() {
 		// commit   = os.Getenv("GITHUB_SHA")
 	)
 
+	fmt.Println("Event:", event)
+
 	// Create Telegram client using token
 	c := tbot.NewClient(token, http.DefaultClient, "https://api.telegram.org")
 
