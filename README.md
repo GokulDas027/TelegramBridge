@@ -27,7 +27,7 @@
 
 ## How does the message looks like ?
 
-![Sample Message](https://drive.google.com/uc?export=view&id=1TsZZi9yS6qC_oQVdoOrRLbL8Zq6WeMqE)
+![Sample Message](Screenshot.png)
 
 ## What's next ?
 
