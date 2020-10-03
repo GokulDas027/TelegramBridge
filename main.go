@@ -22,14 +22,14 @@ func composer(status, event, actor, repo, workflow, link string) string {
 
 	replacer := strings.NewReplacer("_", "\\_", "-", "\\-", ".", "\\.")
 
-	// removing underscore from event name to avoide markdown parser error
+	// removing symbols to avoide markdown parser error
 	event = replacer.Replace(event)
+	event = strings.ToUpper(event)
 
 	repo = replacer.Replace(repo)
 
 	actor = replacer.Replace(actor)
 	
-
 	// Message text composing
 	text = icons[strings.ToLower(status)] + "  *" + event + "*\n"
 	text += "was made at " + repo + " \nby " + actor + "\n"
@@ -70,8 +70,6 @@ func main() {
 		repo     = os.Getenv("GITHUB_REPOSITORY")
 		// commit   = os.Getenv("GITHUB_SHA")
 	)
-
-	fmt.Println("Event:", event)
 
 	// Create Telegram client using token
 	c := tbot.NewClient(token, http.DefaultClient, "https://api.telegram.org")
