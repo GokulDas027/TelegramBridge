@@ -24,14 +24,13 @@ func composer(status, event, actor, repo, workflow, link string) string {
 
 	// removing symbols to avoide markdown parser error
 	event = replacer.Replace(event)
-	event = strings.ToUpper(event)
 
 	repo = replacer.Replace(repo)
 
 	actor = replacer.Replace(actor)
 	
 	// Message text composing
-	text = icons[strings.ToLower(status)] + "  *" + event + "*\n"
+	text = icons[strings.ToLower(status)] + "  *" + strings.ToUpper(event) + "*\n"
 	text += "was made at " + repo + " \nby " + actor + "\n"
 	text += "Check here " + "[" + workflow + "](" + link + ")"
 
