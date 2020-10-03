@@ -21,7 +21,7 @@ jobs:
 
     steps:
     - name: Notifier
-      uses: GokulDas027/TelegramBridge@master
+      uses: GokulDas027/TelegramBridge@dev
       if: always()
       with:
         chat: ${{ secrets.chat }} # save your chat id at settings/secrets with name: chat
